@@ -115,6 +115,9 @@ Route::get('/', array(
       			'as' => 'admin.login'
       			]);
 
+          Route::get('/forgetpw', 'Auth\PasswordController@getUser');
+          Route::post('/forgetpw', 'Auth\PasswordController@postUser');
+
 });
 
 Route::group(['middleware' => 'auth'], function() {
@@ -143,6 +146,8 @@ Route::group(['middleware' => 'auth'], function() {
 		'uses' => 'AdminController@getDataCsv',
 		'as' => 'admin.csv'
 	));
+
+    Route::resource('csv', 'BlogController');
 
 });
 

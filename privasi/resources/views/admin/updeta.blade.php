@@ -7,7 +7,7 @@
   <meta name="description" content="Intive Studio Admin Template">
   <meta name="author" content="Intive Studio">
 
-  <title>Dashboard | Cari Kendaraan</title>
+  <title>Update Artikel | Cari Kendaraan</title>
 
   <link rel="shortcut icon" href="privasi/resources/views/admin/assets/images/favicon.ico">
 
@@ -191,6 +191,7 @@
         </form>
       </div>
       <!-- End Site Navbar Seach -->
+
     </div>
   </nav>
 
@@ -201,25 +202,43 @@
     <div class="page-content padding-30 container-fluid">
       <div class="row" data-plugin="matchHeight" data-by-row="true">
         <div class="col-xlg-6 col-md-12">
-          <!-- Panel Predictions -->
-          <div class="panel panel-bordered panel-primary">
-            <div class="panel-heading">
-            <h3 class="panel-title">Welcome to Cari Kendaraan Dashboard</h3>
+
+          {!! Form::model($blog, ['method' => 'PATCH', 'action' => ['BlogController@update', $blog->id], 'files' => true]) !!}
+            <div class="form-group">
+              {{ Form::label('Judul Artikel :', '', array('class' => 'example-title')) }}
+              {!! Form::text('judul', null, array('class' => 'form-control'),'') !!}
             </div>
-            <div class="panel-body">
-              <span class="text">
-                Cari Kendaraan adalah Sebuah Situs Pembanding Harga Mobil, Motor maupun sepeda
-              </span>
+
+            <div class="form-group">
+              {{ Form::label('tgl', 'Tanggal Posting :', array('class' => 'example-title')) }}
+              {{ Form::text('tanggal', null, array('class' => 'form-control', 'readonly')) }}
             </div>
-          </div>
-          <!-- End Panel Predictions -->
+
+            <div class="form-group">
+              {{ Form::label('Berita :', '', array('class' => 'example-title')) }}
+              {{ Form::textarea('berita', null, array('class' => 'form-control')) }}
+            </div>
+
+            <div class="form-group">
+              {{ Form::label('lblNo', '', array('class' => 'sr-only')) }}
+              <img src="{!! asset($blog->gambar) !!}" alt="Gambar" style="width:50%; height:50%;">
+            </div>
+
+            <div class="form-group">
+              {{ Form::file('file', '', array('class' => 'form-control')) }}
+            </div>
+
+            <div class="form-group">
+              {{ Form::submit('Update', ['class' => 'btn btn-primary waves-effect waves-light']) }}
+            </div>
+          {!! Form::close() !!}
+
         </div>
 
       </div>
     </div>
   </div>
   <!-- End Page -->
-
 
   <!-- Footer -->
   @include('admin.footer')
@@ -264,8 +283,9 @@
   {!! Html::script('privasi/resources/views/admin/assets/js/components/matchheight.js') !!}
   {!! Html::script('privasi/resources/views/admin/assets/js/components/jvectormap.js') !!}
 
-  @include('sweet::alert')
-  @include('flash::message')
+  {!! Html::script('//cdn.tinymce.com/4/tinymce.min.js') !!}
+  <script>tinymce.init({ selector:'textarea' });</script>
+
 </body>
 
 </html>

@@ -17,6 +17,7 @@ class TabelArtikel extends Migration
             $table->increments('id');
             $table->date('tanggal');
             $table->string('judul');
+            $table->string('slug');
             $table->string('berita');
             $table->string('gambar');
             $table->integer('dibaca');

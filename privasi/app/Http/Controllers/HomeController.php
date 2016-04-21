@@ -9,10 +9,12 @@
 namespace App\Http\Controllers;
 
 use DB;
+use App\Artikel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Pagination\Paginator;
 
 class HomeController extends Controller
 {
@@ -38,7 +40,8 @@ class HomeController extends Controller
 
     public function blog()
     {
-        return view('template.blog');
+        $blog = Artikel::query()->orderBy('id','desc')->paginate(5);
+        return view('template.blog')->with('blog', $blog);
     }
 
     public function about()

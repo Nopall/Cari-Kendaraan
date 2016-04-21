@@ -6,7 +6,7 @@
           <ul class="site-menu">
             <li class="site-menu-category">Main Menu</li>
             <li class="site-menu-item has-sub">
-              <a href="./dashboard" data-slug="dashboard">
+              <a href="{{ url('/admin/dashboard') }}" data-slug="dashboard">
                 <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
                 <span class="site-menu-title">Dashboard</span>
               </a>

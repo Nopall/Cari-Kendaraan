@@ -10,7 +10,8 @@
         "laravelcollective/html": "5.2.*",
         "barryvdh/laravel-debugbar": "^2.2",
         "cartalyst/sentry": "dev-feature/laravel-5",
-        "uxweb/sweet-alert": "~1.1"
+        "uxweb/sweet-alert": "~1.1",
+        "laracasts/flash": "^2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

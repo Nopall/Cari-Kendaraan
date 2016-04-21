@@ -119,7 +119,7 @@
               <li role="presentation">
                 <a href="javascript:void(0)" role="menuitem">
                   @if(Auth::check())
-                  <i class="icon wb-user" aria-hidden="true"></i> {{ Auth::user()->username }} </a>
+                  <i class="icon wb-user" aria-hidden="true"></i> {{ Auth::user()->name }} </a>
                   @endif
               </li>
               <li role="presentation">
@@ -203,22 +203,22 @@
       <div class="row" data-plugin="matchHeight" data-by-row="true">
         <div class="col-xlg-6 col-md-12">
 
-          {!! Form::open(array('action' => 'AdminController@inputCsv', 'method' => 'post', 'files' => true)) !!}
+          {!! Form::open(array('action' => 'BlogController@store', 'method' => 'post', 'files' => true)) !!}
 
             <div class="form-group">
-              {{ Form::label('lblNama', '', array('class' => 'sr-only')) }}
+              {{ Form::label('Judul Artikel :', '', array('class' => 'example-title')) }}
               {{ Form::text('judul', '' ,array('class' => 'form-control', 'placeholder' => 'Masukkan Judul Artikel',
               'autocomplete' => 'off')) }}
             </div>
 
             <div class="form-group">
-              {{ Form::label('lblKelamin', 'Jenis Kelamin', array('class' => 'sr-only')) }}
+              {{ Form::label('tgl', 'Tanggal Posting :', array('class' => 'example-title')) }}
               {{-- {{ Form::text('tanggal', '', array('class' => 'form-control', 'value' => 'echo date(Y-m-d H:i:s);')) }} --}}
               <input type="text" value="<?php echo date('Y-m-d'); ?>" class="form-control" name="tanggal" readonly="true">
             </div>
 
             <div class="form-group">
-              {{ Form::label('lblAlamat', '', array('class' => 'sr-only')) }}
+              {{ Form::label('Berita :', '', array('class' => 'example-title')) }}
               {{ Form::textarea('berita', '', array('class' => 'form-control', 'placeholder' => 'Lorem Ipsum Dolor Sit Amet',
               'autocomplete' => 'off')) }}
             </div>
@@ -281,6 +281,9 @@
   {!! Html::script('privasi/resources/views/admin/assets/js/components/switchery.js') !!}
   {!! Html::script('privasi/resources/views/admin/assets/js/components/matchheight.js') !!}
   {!! Html::script('privasi/resources/views/admin/assets/js/components/jvectormap.js') !!}
+
+  {!! Html::script('//cdn.tinymce.com/4/tinymce.min.js') !!}
+  <script>tinymce.init({ selector:'textarea' });</script>
 
 </body>
 

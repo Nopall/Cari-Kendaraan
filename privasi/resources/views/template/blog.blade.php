@@ -35,42 +35,27 @@
 
         <div class="container">
             <!-- START BLOG POST -->
+              @foreach($blog as $vlog)
             <div class="article post">
-
                 <div class="post-inner">
-                    <h4 class="post-title"><a class="text-darken" href="#">Lorem Ipsum Dolor Sit Amet</a></h4>
+                    <h4 class="post-title"><a class="text-darken" href="#">{{ $vlog->judul }}</a></h4>
                     <ul class="post-meta">
-                        <li><i class="fa fa-calendar"></i><a href="#"><?php echo date("F j, Y, g:i a"); ?></a>
+                        <li><i class="fa fa-calendar"></i><a href="#">{{ $vlog->tanggal }}</a>
                         </li>
                         <li><i class="fa fa-user"></i><a href="#">Admin</a>
                         </li>
                     </ul>
-                    <p class="post-desciption">Ut luctus rhoncus proin mattis aenean cubilia molestie velit tincidunt hac vehicula nisl mi metus dictum fames ullamcorper eget velit interdum mauris nam malesuada purus fames consectetur mi per quam volutpat erat ad semper risus integer cubilia vitae natoque dignissim tempus dignissim venenatis fringilla nec varius ante aptent augue dictumst</p>
+                    <p class="post-desciption">
+                      {{ $vlog->berita }}
+                    </p>
                     <a class="btn btn-small btn-primary" href="./post">Read More</a>
                 </div>
             </div>
+              @endforeach
             <!-- END BLOG POST -->
 
             <ul class="pagination">
-                <li class="active"><a href="#">1</a>
-                </li>
-                <li><a href="#">2</a>
-                </li>
-                <li><a href="#">3</a>
-                </li>
-                <li><a href="#">4</a>
-                </li>
-                <li><a href="#">5</a>
-                </li>
-                <li><a href="#">6</a>
-                </li>
-                <li><a href="#">7</a>
-                </li>
-                <li class="dots">...</li>
-                <li><a href="#">43</a>
-                </li>
-                <li class="next"><a href="#">Next Page</a>
-                </li>
+                {{ $blog->links() }}
             </ul>
         </div>
 

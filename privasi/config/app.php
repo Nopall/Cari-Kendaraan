@@ -170,6 +170,11 @@ return [
          *SweetAlert
          */
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+
+        /*
+         * Laracasts Flash
+         */
+         Laracasts\Flash\FlashServiceProvider::class,
     ],
 
     /*
@@ -220,6 +225,7 @@ return [
         'Input' => Illuminate\Support\Facades\Input::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+        'Flash' => Laracasts\Flash\Flash::class,
     ],
 
 ];

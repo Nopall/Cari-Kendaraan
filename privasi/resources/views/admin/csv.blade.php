@@ -51,7 +51,7 @@
 
     <!--Datatables -->
     {!! Html::style('privasi/resources/views/admin/assets/vendor/datatables-bootstrap/dataTables.bootstrap.min.css') !!}
-    {!! Html::style('privasi/resources/views/admin/assets/vendor/datatables/datatables.min.css') !!}
+    {!! Html::style('privasi/resources/views/admin/assets/vendor/datatables/datatables.css') !!}
     {!! Html::style('privasi/resources/views/admin/assets/vendor/datatables-fixedheader/dataTables.fixedHeader.min.css') !!}
     {!! Html::style('privasi/resources/views/admin/assets/vendor/datatables-responsive/dataTables.responsive.min.css') !!}
     {!! Html::style('privasi/resources/views/admin/assets/vendor/datatables-tabletools/dataTables.tableTools.js') !!}
@@ -127,7 +127,7 @@
                         <li role="presentation">
                             <a href="javascript:void(0)" role="menuitem">
                                 @if(Auth::check())
-                                <i class="icon wb-user" aria-hidden="true"></i> {{ Auth::user()->username }} </a>
+                                <i class="icon wb-user" aria-hidden="true"></i> {{ Auth::user()->name }} </a>
                             @endif
                         </li>
                         <li role="presentation">
@@ -244,14 +244,63 @@
                                 <td>{!! $vlog->berita !!}</td>
                                 <td><img src="{!! asset($vlog->gambar) !!}" alt="Gambar" style="width:20px; height:20px;"></td>
                                 <td>
-                                  <a href="{{ url('/admin/csv') }}/edit/{{ $vlog->id }}">
-                                    <i class="wb-eye" style="font-size: 20px;"> Edit</i>
+                                  <button class="btn btn-primary" data-target="#exampleModalPrimary{{{ $vlog->id }}}" data-toggle="modal" type="button">
+                                    <i class="wb-eye"> Lihat</i>
+                                  </button>
+                                  <a href="{{ url('csv') }}/{{ $vlog->id }}/edit" class="btn btn-info">
+                                    <i class="wb-edit"> Edit</i>
                                   </a>
-                                  <a href="{{ url('/admin/csv') }}/{{ $vlog->id }}">
-                                    <i class="wb-trash" style="font-size: 20px;"> Hapus</i>
-                                  </a>
+                                  <button class="btn btn-danger" data-target="#modHapus{{{ $vlog->id }}}" data-toggle="modal" type="button">
+                                    <i class="wb-trash"> Hapus</i>
+                                  </button>
                                 </td>
                             </tr>
+                            <!-- Modal Lihat-->
+                            <div class="modal fade modal-primary modal-3d-slit" id="exampleModalPrimary{{{ $vlog->id }}}" aria-hidden="true"
+                            aria-labelledby="exampleModalPrimary" role="dialog" tabindex="-1">
+                              <div class="modal-dialog modal-center">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">×</span>
+                                    </button>
+                                    <h4 class="modal-title">Detail Berita</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    <p class="text-description">{{ $vlog->berita }}</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-default btn-pure" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Modal -->
+
+                            <!-- Modal Hapus-->
+                            <div class="modal fade modal-3d-slit modal-danger" id="modHapus{{{ $vlog->id }}}" aria-hidden="true"
+                            aria-labelledby="exampleModalPrimary" role="dialog" tabindex="-1">
+                              <div class="modal-dialog modal-center">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">×</span>
+                                    </button>
+                                    <h4 class="modal-title">Hapus Artikel</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    <p class="text-description">Apakah Anda Yakin Menghapus Data ?</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('csv.destroy', $vlog->id))) !!}
+                                      {!! Form::submit("Ya", array('class' => 'btn btn-danger btn-pure')) !!}
+                                    {!! Form::close() !!}
+                                    <button type="button" class="btn btn-default btn-pure" data-dismiss="modal">Tidak</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Modal -->
                               @endforeach
                             </tbody>
                         </table>
