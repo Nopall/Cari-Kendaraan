@@ -85,9 +85,9 @@
                             </a>
                         </header>
                         <div class="thumb-caption">
-                            <h5 class="thumb-title"><a class="text-darken" href="#">Toyota Avanza</a></h5>
+                            <h5 class="thumb-title"><a class="text-darken" href="#">Audi UK</a></h5>
                             </p>
-                            <p class="mb0 text-darken"><span class="text-lg lh1em text-color">Rp.394</span>
+                            <p class="mb0 text-darken"><span class="text-lg lh1em text-color">Rp. 410.000.000</span>
                             </p>
                         </div>
                     </div>
@@ -103,9 +103,9 @@
                         <div class="thumb-caption">
                             <ul class="icon-group text-tiny text-color">
                             </ul>
-                            <h5 class="thumb-title"><a class="text-darken" href="#">Sepeda Maling</a></h5>
+                            <h5 class="thumb-title"><a class="text-darken" href="#">Honda CBR 250R ABS REPSOL</a></h5>
                             </p>
-                            <p class="mb0 text-darken"><span class="text-lg lh1em text-color">Rp.100</span>
+                            <p class="mb0 text-darken"><span class="text-lg lh1em text-color">Rp. 56.200.000</span>
                             </p>
                         </div>
                     </div>
@@ -121,9 +121,9 @@
                         <div class="thumb-caption">
                             <ul class="icon-group text-tiny text-color">
                             </ul>
-                            <h5 class="thumb-title"><a class="text-darken" href="#">Fixie Mastah</a></h5>
+                            <h5 class="thumb-title"><a class="text-darken" href="#">Fixie Element Road frc 65</a></h5>
                             </p>
-                            <p class="mb0 text-darken"><span class="text-lg lh1em text-color">Rp.213</span>
+                            <p class="mb0 text-darken"><span class="text-lg lh1em text-color">Rp. 4.000.000</span>
                             </p>
                         </div>
                     </div>

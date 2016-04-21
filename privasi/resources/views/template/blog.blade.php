@@ -46,7 +46,7 @@
                         </li>
                     </ul>
                     <p class="post-desciption">
-                      {{ $vlog->berita }}
+                      {!! $vlog->berita !!}
                     </p>
                     <a class="btn btn-small btn-primary" href="./post">Read More</a>
                 </div>

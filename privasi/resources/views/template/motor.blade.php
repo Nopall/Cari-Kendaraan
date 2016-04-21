@@ -151,10 +151,10 @@
                             </a>
                         </header>
                         <div class="thumb-caption">
-                            <h5 class="thumb-title"><a class="text-darken" href="{{ route('template.dproduk') }}">Nama Motor</a></h5>
+                            <h5 class="thumb-title"><a class="text-darken" href="{{ route('template.dproduk') }}">Honda CBR 250R ABS REPSOL</a></h5>
                             <p class="mb0"><small><i class="fa fa-map-marker"></i> Surabaya, ID</small>
                             </p>
-                            <p class="mb0 text-darken"><span class="text-lg lh1em text-color">Rp. 165</span>
+                            <p class="mb0 text-darken"><span class="text-lg lh1em text-color">Rp. 56.200.000</span>
                             </p>
                         </div>
                     </div>
@@ -168,10 +168,10 @@
                             </a>
                         </header>
                         <div class="thumb-caption">
-                            <h5 class="thumb-title"><a class="text-darken" href="{{ route('template.dproduk') }}">Nama Motor</a></h5>
+                            <h5 class="thumb-title"><a class="text-darken" href="{{ route('template.dproduk') }}">Honda CBR 250R ABS REPSOL</a></h5>
                             <p class="mb0"><small><i class="fa fa-map-marker"></i> Surabaya, ID</small>
                             </p>
-                            <p class="mb0 text-darken"><span class="text-lg lh1em text-color">Rp. 165</span>
+                            <p class="mb0 text-darken"><span class="text-lg lh1em text-color">Rp. 56.200.000</span>
                             </p>
                         </div>
                     </div>
@@ -185,10 +185,10 @@
                             </a>
                         </header>
                         <div class="thumb-caption">
-                            <h5 class="thumb-title"><a class="text-darken" href="{{ route('template.dproduk') }}">Nama Motor</a></h5>
+                            <h5 class="thumb-title"><a class="text-darken" href="{{ route('template.dproduk') }}">Honda CBR 250R ABS REPSOL</a></h5>
                             <p class="mb0"><small><i class="fa fa-map-marker"></i> Surabaya, ID</small>
                             </p>
-                            <p class="mb0 text-darken"><span class="text-lg lh1em text-color">Rp. 165</span>
+                            <p class="mb0 text-darken"><span class="text-lg lh1em text-color">Rp. 56.200.000</span>
                             </p>
                         </div>
                     </div>
@@ -202,10 +202,10 @@
                             </a>
                         </header>
                         <div class="thumb-caption">
-                            <h5 class="thumb-title"><a class="text-darken" href="{{ route('template.dproduk') }}">Nama Motor</a></h5>
+                            <h5 class="thumb-title"><a class="text-darken" href="{{ route('template.dproduk') }}">Honda CBR 250R ABS REPSOL</a></h5>
                             <p class="mb0"><small><i class="fa fa-map-marker"></i> Surabaya, ID</small>
                             </p>
-                            <p class="mb0 text-darken"><span class="text-lg lh1em text-color">Rp. 165</span>
+                            <p class="mb0 text-darken"><span class="text-lg lh1em text-color">Rp. 56.200.000</span>
                             </p>
                         </div>
                     </div>

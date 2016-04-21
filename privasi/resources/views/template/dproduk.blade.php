@@ -69,14 +69,15 @@
                     </div>
                     <div class="col-md-6">
                         <div class="booking-item-meta">
-                            <h2 class="lh1em mt40">Lorem Ipsum Dolor Sit Amet</h2>
-                            <p /><span class="text-lg"><i class="fa fa-map-marker"></i> Ini Alamat </span>
-                            <p /><span class="text-lg"><a href="#"><i class="fa fa-user"></i> Penjual </span></a>
-                            <p /><span class="text-lg"><a href="http://carikendaraan.id"><i class="fa fa-globe"></i> Website </span></a>
+                            <h2 class="lh1em mt40">Audi UK</h2>
+                            <p /><span class="text-lg"><i class="fa fa-map-marker"></i> Jalan. Surabaya </span>
+                            <p /><span class="text-lg"><a href="#"><i class="fa fa-user"></i> user@mobil123.com </span></a>
+                            <p /><span class="text-lg"><a href="http://mobil123.com "><i class="fa fa-globe"></i> mobil123.com  </span></a>
                             <p /><span class="text-lg"><i class="fa fa-phone"></i> +62 (856) 123-4567 </span>
-                            <p /><span class="text-lg"><i class="fa fa-rss"></i> Ini Deskripsi </span>
-                            <p /><span class="text-lg">Rp. 350</span></p>
+                            <p /><span class="text-lg"><i class="fa fa-rss"></i> Lorem Ipsum Dolor Sit Amet </span>
+                            <p /><span class="text-lg">Rp. 410.000.000</span></p>
                             <a class="btn btn-primary" href="{{ route('redir') }}">Kunjungi Penjual</a>
+                            <a class="btn btn-danger" href="{{ route('redir') }}">Bandingkan</a>
                         </div>
                         <div class="row">
 
@@ -93,13 +94,13 @@
                                 <a class="booking-item">
                                     <div class="row">
                                         <div class="col-md-3">
-                                            {!! Html::image('privasi/resources/views/template/img/car.jpg') !!}
+                                            {!! Html::image('privasi/resources/views/template/img/spd.jpg') !!}
                                         </div>
                                         <div class="col-md-6">
-                                            <h5 class="booking-item-title">Lorem Ipsum Dolor Sit Amet</h5>
+                                            <h5 class="booking-item-title">Fixie Element Road frc 65</h5>
                                             <p class="text-small">Tellus auctor sem sociosqu cras cursus vitae erat aliquam adipiscing iaculis suscipit curabitur</p>
                                         </div>
-                                        <div class="col-md-3"><span class="booking-item-price">Rp. 318</span>
+                                        <div class="col-md-5"><span class="booking-item-price">Rp. 4.000.000</span>
                                           <span class="btn btn-primary">Lihat Produk</span>
                                         </div>
                                     </div>
