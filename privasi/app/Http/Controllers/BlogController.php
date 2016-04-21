@@ -47,33 +47,61 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         //
-        $tanggal = $request['tanggal'];
-        $judul = $request['judul'];
-        $slug = str_slug($judul);
-        $berita = $request['berita'];
-        $gambar = $request['file'];
-        $tmpFilePath = 'public/img';
-        $filename  = time() . '.' . $gambar->getClientOriginalExtension();
-        $path = $tmpFilePath.$filename;
-        $data_file = $gambar->move($tmpFilePath,$filename);
 
-        $artikel = new Artikel();
-        $artikel->tanggal = $tanggal;
-        $artikel->judul = $judul;
-        $artikel->slug = $slug;
-        $artikel->berita = $berita;
-        $artikel->gambar = $data_file;
+        if (Input::hasFile('file')) {
+          # code...
+          $tanggal = $request['tanggal'];
+          $judul = $request['judul'];
+          $slug = str_slug($judul);
+          $berita = $request['berita'];
+          $gambar = $request['file'];
+          $tmpFilePath = 'public/img';
+          $filename  = time() . '.' . $gambar->getClientOriginalExtension();
+          $path = $tmpFilePath.$filename;
+          $data_file = $gambar->move($tmpFilePath,$filename);
 
-        if ($artikel->save()) {
-            # code...
-            Alert::success('Artikel Berhasil Ditambahkan', 'Success');
+          $artikel = new Artikel();
+          $artikel->tanggal = $tanggal;
+          $artikel->judul = $judul;
+          $artikel->slug = $slug;
+          $artikel->berita = $berita;
+          $artikel->gambar = $data_file;
+          $artikel->save();
 
-            return redirect('/admin/putcsv');
+          Alert::success('Artikel Berhasil Ditambahkan', 'Success');
+          return redirect('/admin/putcsv');
         } else {
-            # code...
-            Alert::error('Artikel Gagal Ditambahkan');
-            return redirect('/admin/dashboard');
+          #code...
+          $tanggal = $request['tanggal'];
+          $judul = $request['judul'];
+          $slug = str_slug($judul);
+          $berita = $request['berita'];
+
+          $artikel = new Artikel();
+          $artikel->tanggal = $tanggal;
+          $artikel->judul = $judul;
+          $artikel->slug = $slug;
+          $artikel->berita = $berita;
+          $artikel->save();
+
+          Alert::success('Artikel Berhasil Ditambahkan', 'Success');
+          return redirect('/admin/putcsv');
         }
+
+        Alert::error('Gagal Tambah Artikel', 'Error');
+        return redirect('/admin/csv');
+
+
+        // if ($artikel->save()) {
+        //     # code...
+        //     Alert::success('Artikel Berhasil Ditambahkan', 'Success');
+        //
+        //     return redirect('/admin/putcsv');
+        // } else {
+        //     # code...
+        //     Alert::error('Artikel Gagal Ditambahkan');
+        //     return redirect('/admin/dashboard');
+        // }
     }
 
     /**

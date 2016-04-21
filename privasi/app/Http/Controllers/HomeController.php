@@ -44,6 +44,12 @@ class HomeController extends Controller
         return view('template.blog')->with('blog', $blog);
     }
 
+    public function blogpost($id)
+    {
+        $blog = Artikel::where('id', '=', $id)->get();
+        return view('template.post')->with('blog', $blog);
+    }
+
     public function about()
     {
       return view('template.about');

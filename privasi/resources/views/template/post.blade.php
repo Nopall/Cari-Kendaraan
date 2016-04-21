@@ -39,19 +39,22 @@
                     <hr />
                 </div>
         <div class="container">
+          @foreach($blog as $vlog)
             <article class="post">
                 <div class="post-inner">
-                    <h4 class="post-title text-darken">Lorem Ipsum Dolor sit Amet</h4>
+                    <img src="{!! asset($vlog->gambar) !!}" alt="Blog Image" class="imgLoad">
+                    <p />
+                    <h4 class="post-title text-darken">{!! $vlog->judul !!}</h4>
                     <ul class="post-meta">
-                        <li><i class="fa fa-calendar"></i><a href="#"><?php echo date("F j, Y, g:i a"); ?></a>
+                        <li><i class="fa fa-calendar"></i><a href="#">{!! $vlog->tanggal !!}</a>
                         </li>
                         <li><i class="fa fa-user"></i><a href="#">Admin</a>
                         </li>
                     </ul>
-                    <p>Lobortis quis sociosqu lorem cras pretium quam parturient euismod et fermentum curabitur cubilia elit mattis nascetur ipsum vulputate sapien viverra fermentum habitasse cras ac nibh phasellus accumsan praesent laoreet scelerisque</p>
-                    <p>Id potenti nec auctor praesent class eget fringilla volutpat leo consectetur urna per tellus libero porttitor praesent vel velit vulputate nostra sapien suscipit pellentesque felis viverra suscipit adipiscing facilisis nostra dictumst vehicula mi euismod nam quisque lorem blandit dis fermentum congue nostra semper venenatis tortor velit odio molestie sed potenti id iaculis fames vivamus erat fringilla himenaeos fusce vulputate purus litora torquent sem litora morbi eleifend justo sit congue ligula aliquet placerat commodo curae in himenaeos vulputate lacinia porta pulvinar rhoncus sollicitudin pharetra conubia tempor molestie mollis id facilisis at accumsan sodales malesuada montes faucibus hac leo nam curabitur est</p>
+                    <p>{!! $vlog->berita !!}</p>
                   </div>
             </article>
+          @endforeach
             <h2>Komentar</h2>
             <!-- START COMMENTS -->
             <div class="fb-comments" data-href="http://carikendaraan.id" data-width="1140" data-numposts="10"></div>
@@ -83,6 +86,23 @@
         {!! Html::script('privasi/resources/views/template/dist/sweetalert.min.js') !!}
         @include('sweet::alert')
     </div>
+
+    <script>
+    $(document).ready(function()
+    {
+        $(".imgLoad").error(function(){
+            $(this).attr('src', '../../public/img/blog.png');
+        });
+    });
+
+    $(document).ready(function()
+    {
+      $(".imgLoad").onload(function(){
+        $(this).attr('src', '../../public/img/ajax-loader.gif');
+      });
+    });
+    </script>
+
 </body>
 
 </html>

@@ -39,6 +39,11 @@ Route::get('/', array(
     'as' => 'template.blog'
   ));
 
+  Route::get('/post/{id}/{slug}', array(
+    'uses' => 'HomeController@blogpost',
+    'as' => 'template.post'
+  ));
+
   Route::get('/sresult', function()
   {
     return view('template.sresult');

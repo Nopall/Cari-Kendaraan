@@ -38,7 +38,7 @@
               @foreach($blog as $vlog)
             <div class="article post">
                 <div class="post-inner">
-                    <h4 class="post-title"><a class="text-darken" href="#">{{ $vlog->judul }}</a></h4>
+                    <h4 class="post-title"><a class="text-darken" href="{{ url('/post')}}/{{ $vlog->id }}/{{ $vlog->slug }}">{{ $vlog->judul }}</a></h4>
                     <ul class="post-meta">
                         <li><i class="fa fa-calendar"></i><a href="#">{{ $vlog->tanggal }}</a>
                         </li>
@@ -48,7 +48,7 @@
                     <p class="post-desciption">
                       {!! $vlog->berita !!}
                     </p>
-                    <a class="btn btn-small btn-primary" href="./post">Read More</a>
+                    <a class="btn btn-small btn-primary" href="{{ url('/post') }}/{{ $vlog->id }}/{{ $vlog->slug }}">Read More</a>
                 </div>
             </div>
               @endforeach
