@@ -8,10 +8,10 @@
                             </a>
                         </div>
                         <div class="col-md-3 col-md-offset-2">
-                            <form class="main-header-search">
+                            <form class="main-header-search" method="GET" action="{{ url('/search') }}">
                                 <div class="form-group form-group-icon-left">
                                     <i class="fa fa-search input-icon"></i>
-                                    <input type="text" class="form-control" placeholder="Search Here ... ">
+                                    <input type="text" class="form-control" name="search" placeholder="Search Here ... ">
                                 </div>
                             </form>
                         </div>

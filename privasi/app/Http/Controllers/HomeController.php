@@ -50,6 +50,20 @@ class HomeController extends Controller
         return view('template.post')->with('blog', $blog);
     }
 
+    public function getSearch()
+    {
+      $cari = Input::get('search');
+      $blog = Artikel::where('judul', 'LIKE', '%'.$cari.'%')->get();
+
+      if (!$blog) {
+        # code...
+        Flash::error('Yang Anda Cari Tidak Ada');
+        return view('index');
+      } else {
+      return view('template.sblog')->with('blog', $blog);
+      }
+    }
+
     public function about()
     {
       return view('template.about');

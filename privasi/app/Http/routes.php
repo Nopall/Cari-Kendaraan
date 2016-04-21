@@ -44,6 +44,8 @@ Route::get('/', array(
     'as' => 'template.post'
   ));
 
+  Route::get('/search', 'HomeController@getSearch');
+
   Route::get('/sresult', function()
   {
     return view('template.sresult');
